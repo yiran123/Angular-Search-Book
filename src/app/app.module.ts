@@ -1,3 +1,4 @@
+import { WishListComponent } from './components/wish-list/wish-list.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,6 +21,7 @@ import { MaterialModule } from './material.module';
     HeaderComponent,
     BookListComponent,
     BookCardComponent,
+    WishListComponent,
   ],
   imports: [
     MaterialModule,

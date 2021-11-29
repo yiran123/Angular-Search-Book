@@ -7,7 +7,8 @@
     ></app-book-card>
   </div>
   <div class="right-container">
-    <h3>My WishList</h3>
+    <!-- <app-wish-list [wishlist]="wishlist"></app-wish-list> -->
+    <h3>My WishList ({{ count }})</h3>
     <div *ngFor="let wishBook of wishlist">
       {{ wishBook }}
       <button (click)="deleteFromWishlist(wishBook)">x</button>

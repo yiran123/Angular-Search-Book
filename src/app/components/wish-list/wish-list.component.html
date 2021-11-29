@@ -1,0 +1,5 @@
+<!-- <h3>My WishList ({{ count }})</h3> -->
+<div *ngFor="let wishBook of wishlist">
+  {{ wishBook }}
+  <button (click)="deleteFromWishlist(wishBook)">x</button>
+</div>

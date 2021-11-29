@@ -1,7 +1,8 @@
-<app-header></app-header>
-<mat-form-field appearance="fill">
-  <mat-label>Search for a book</mat-label>
-  <input matInput #input [(ngModel)]="inputval" (keyup)="search()" />
-</mat-form-field>
+<div class="main-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Search for a book</mat-label>
+    <input matInput #input [(ngModel)]="inputval" (keyup)="search()" />
+  </mat-form-field>
 
-<app-book-list [booklist]="booklist"></app-book-list>
+  <app-book-list [booklist]="booklist"></app-book-list>
+</div>
