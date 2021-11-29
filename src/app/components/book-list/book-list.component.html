@@ -7,11 +7,15 @@
     ></app-book-card>
   </div>
   <div class="right-container">
-    <!-- <app-wish-list [wishlist]="wishlist"></app-wish-list> -->
     <h3>My WishList ({{ count }})</h3>
-    <div *ngFor="let wishBook of wishlist">
+    <app-wish-list
+      [wishlist]="wishlist"
+      (deleted_book)="deleteFrom_Wishlist($event)"
+    ></app-wish-list>
+
+    <!-- <div *ngFor="let wishBook of wishlist">
       {{ wishBook }}
       <button (click)="deleteFromWishlist(wishBook)">x</button>
-    </div>
+    </div> -->
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-wish-list',
@@ -7,15 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class WishListComponent implements OnInit {
   @Input() wishlist!: string[];
+  @Output() deleted_book = new EventEmitter();
   // wishlist: string[] = [];
-  count: number = 0;
+  //count: number = 0;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   deleteFromWishlist(title: string) {
-    this.wishlist = this.wishlist.filter((ele: any) => ele !== title);
-    this.count = this.wishlist.length;
+    this.deleted_book.emit(title);
   }
 }

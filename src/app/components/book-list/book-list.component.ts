@@ -21,7 +21,12 @@ export class BookListComponent implements OnInit {
     this.count = this.wishlist.length;
   }
 
-  deleteFromWishlist(title: string) {
+  // deleteFromWishlist(title: string) {
+  //   this.wishlist = this.wishlist.filter((ele: any) => ele !== title);
+  //   this.count = this.wishlist.length;
+  // }
+
+  deleteFrom_Wishlist(title: string) {
     this.wishlist = this.wishlist.filter((ele: any) => ele !== title);
     this.count = this.wishlist.length;
   }
