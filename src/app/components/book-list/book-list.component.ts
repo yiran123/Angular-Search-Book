@@ -8,8 +8,18 @@ import { Book } from 'src/app/book.interface';
 })
 export class BookListComponent implements OnInit {
   @Input() booklist?: Book[];
+  wishlist: string[] = [];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  addToWishlist(title: string) {
+    this.wishlist.push(title);
+    //console.log(this.wishlist);
+  }
+
+  deleteFromWishlist(title: string) {
+    this.wishlist = this.wishlist.filter((ele: any) => ele !== title);
+  }
 }

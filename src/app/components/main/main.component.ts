@@ -21,15 +21,18 @@ export class MainComponent implements OnInit {
   booklist: Book[] = [];
   constructor(private bs: BookService) {}
 
-  @ViewChild('input', { static: false })
-  input!: ElementRef;
+  // @ViewChild('input', { static: false })
+  // input!: ElementRef;
 
   ngOnInit(): void {}
 
   search() {
-    this.bs.search(this.inputval).subscribe((books: Book[]) => {
-      this.booklist = books;
-    });
-    console.log(this.booklist[0].volumeInfo.imageLinks.thumbnail);
+    this.bs
+      .search(this.inputval)
+      .pipe(debounceTime(150), distinctUntilChanged())
+      .subscribe((books: Book[]) => {
+        this.booklist = books;
+        //console.log(books);
+      });
   }
 }

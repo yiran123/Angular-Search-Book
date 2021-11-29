@@ -1,1 +1,16 @@
-<app-book-card *ngFor="let book of booklist" [book]="book"></app-book-card>
+<div class="container">
+  <div class="left-container">
+    <app-book-card
+      *ngFor="let book of booklist"
+      [book]="book"
+      (wishlist_book)="addToWishlist($event)"
+    ></app-book-card>
+  </div>
+  <div class="right-container">
+    <h3>My WishList</h3>
+    <div *ngFor="let wishBook of wishlist">
+      {{ wishBook }}
+      <button (click)="deleteFromWishlist(wishBook)">x</button>
+    </div>
+  </div>
+</div>

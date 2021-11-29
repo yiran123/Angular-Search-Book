@@ -1,1 +1,32 @@
-{{ book?.volumeInfo?.title }}
+<mat-card class="book-card">
+  <div>
+    <img
+      mat-card-image
+      src="{{ book?.volumeInfo?.imageLinks?.thumbnail }}"
+      alt="book-thumbnail"
+    />
+  </div>
+  <div>
+    <mat-card-header>
+      <mat-card-title>{{ book?.volumeInfo?.title }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p *ngIf="book?.volumeInfo?.authors">
+        <strong>Author: </strong> {{ book?.volumeInfo?.authors }}
+      </p>
+      <p *ngIf="book?.volumeInfo?.publisher">
+        <strong>Publisher: </strong> {{ book?.volumeInfo?.publisher }}
+      </p>
+      <p *ngIf="book?.volumeInfo?.publishDate">
+        <strong>Publish Date: </strong> {{ book?.volumeInfo?.publishDate }}
+      </p>
+      <p *ngIf="book?.volumeInfo?.description">
+        <strong>Description: </strong> {{ book?.volumeInfo?.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="addToWishlist()">Add to WishList</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

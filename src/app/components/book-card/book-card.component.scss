@@ -1,0 +1,14 @@
+img {
+  width: 100px;
+  padding: 30px;
+}
+
+mat-card {
+  display: flex;
+  margin: 20px;
+  //cursor: pointer;
+  &:hover {
+    //border-bottom: 1px solid;
+    box-shadow: 5px 5px 2px grey;
+  }
+}
